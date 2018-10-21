@@ -1,9 +1,6 @@
 #Due to the complexity and unfamiliar structure of HTML code...
-#... I had to write some complex, ugly and primitive methods for parsing the CS and EE links.
+#... I had to write some complex methods for parsing the CS and EE links.
 #Though the IE parsing method is quite pretty :D
-
-#The semesters in the Text widget are not in order sometimes (fortunately, there was no requirement for this).
-#I hope this will be my first project where I get full 100 points :D
 
 
 from Tkinter import *
@@ -26,7 +23,6 @@ class GradesClairvoyant(Frame):
         self.main_frame = Frame()
         self.main_frame.pack()
         Label(self.main_frame, text = "Grades Clairvoyant! Look into the future... but be careful!",
-                                      # I hope I will not lose points for this original title ^^
               bg="slategray4", fg='white', font='harrington 28 bold', width=45).grid(columnspan=3)
         Label(self.main_frame, text = "Please upload your curriculum with the grades: ", font='arial 13')\
             .grid(pady=10, stick=E)
@@ -303,7 +299,6 @@ class GradesClairvoyant(Frame):
                     self.courses_grades.setdefault(ie_courses_draft[item][0]+" "+ie_courses_draft[item][1], [])
                     self.courses_grades[ie_courses_draft[item][0]+" "+ie_courses_draft[item][1]].append(" ".join(ie_courses_draft[item+1]))
 
-    #This method is from preious project from professor's crawler class
     def gettextonly(self, soup):
         v = soup.string
         if v == None:
